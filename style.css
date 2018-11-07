@@ -1,0 +1,42 @@
+
+#commentContainer {
+  background-color: white;
+  width: 33vw;
+  height: 25vh;
+  border: solid;
+  position: fixed;
+  left: 33.5vw;
+  top: 37.5vh;
+  bottom: 37.5%;
+  z-index: 100;
+}
+
+.wrapper {
+  padding: 0% 10%;
+}
+
+.postWrap {
+  border: dotted;
+}
+.postText {
+  padding: 2%;
+  text-align: center;
+}
+.commentWrap {
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  margin: 2px;
+  margin-right: 5%;
+}
+.commentText {
+  padding: 0.5%;
+  margin-bottom: 0;
+}
+
+.replybtn {
+  font-size: 150%;
+  text-decoration: none;
+  padding: 0px 2% 0px ;
+  text-align: right;
+}
