@@ -1,14 +1,19 @@
 
-#commentContainer {
+#commentPopUpContainer {
+  visibility: hidden;
+  position: fixed;
   background-color: white;
   width: 33vw;
   height: 25vh;
   border: solid;
-  position: fixed;
   left: 33.5vw;
   top: 37.5vh;
-  bottom: 37.5%;
-  z-index: 100;
+  bottom: 37.5vh;
+  overflow: auto;
+}
+
+#commentPopUpContainer.open {
+  visibility: visible;
 }
 
 .wrapper {
@@ -18,8 +23,14 @@
 .postWrap {
   border: dotted;
 }
+.postRubrik {
+  padding-bottom: 0px;
+  margin: 0px;
+  text-align: center;
+}
 .postText {
   padding: 2%;
+  margin-top: 0px;
   text-align: center;
 }
 .commentWrap {
@@ -30,6 +41,7 @@
   margin-right: 5%;
 }
 .commentText {
+  word-break: break-all;
   padding: 0.5%;
   margin-bottom: 0;
 }

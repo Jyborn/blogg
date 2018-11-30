@@ -17,8 +17,8 @@
   <body>
 
     <?php
-    commentPopUp();
     getblogContent();
+    commentPopUp();
     ?>
 
     <script src="newCommentJs.js"></script>

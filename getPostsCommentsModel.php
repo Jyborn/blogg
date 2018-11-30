@@ -2,7 +2,7 @@
 
   function getPosts() {
     $db = dbconnect();
-    $sth = $db->prepare('SELECT * FROM posts');
+    $sth = $db->prepare('SELECT * FROM posts ORDER BY Post_PK DESC');
     $sth->execute();
 
     $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
@@ -13,6 +13,7 @@
       $blog[count($blog)] = $post['Post_Content'];
       $blog[count($blog)] = 0;
       $blog[count($blog)] = $post['Post_PK'];
+      $blog[count($blog)] = $post['Post_Rubrik'];
 
       $blog = getComments($post['Post_PK'], $blog, 0);
     }
@@ -31,9 +32,9 @@
     $db = dbconnect();
     // Kolla om föräldern är post eller comment
     if ($depth == 0) {
-      $sth = $db->prepare("SELECT * FROM comments WHERE Post_FK = '$parentPK'");
+      $sth = $db->prepare("SELECT * FROM comments WHERE Post_FK = '$parentPK' ORDER BY Comment_PK desc");
     } else if ($depth > 0) {
-      $sth = $db->prepare("SELECT * FROM comments WHERE Comment_FK = '$parentPK'");
+      $sth = $db->prepare("SELECT * FROM comments WHERE Comment_FK = '$parentPK' ORDER BY Comment_PK desc");
     }
     $sth->execute();
 
@@ -48,6 +49,7 @@
 
       $tempBlog = getComments($comment['Comment_PK'], $tempBlog, $depth + 1);
     }
+
     return $tempBlog;
   }
 
