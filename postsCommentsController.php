@@ -4,8 +4,9 @@
   require 'showPostsCommentsView.php';
 
   function getblogContent() {
-    $blog = getPosts();
-    showPostsComments($blog);
+    $blog[] = array();
+    $blog = getPosts($blog);
+    showPostsComments(array_filter($blog));
   }
 
 ?>
