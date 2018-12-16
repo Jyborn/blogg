@@ -9,9 +9,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <button id="loginButton" type="button" class="btn btn-primary">Login</button>
-    <button id="newPostButton" type="button" class="btn btn-primary">New Post</button>
+    <button id="newPostButton" type="button" class="btn btn-primary" onclick="location.href='newPostForm.php';">New Post</button>
 </nav>
 
 <?php
+  $x = 0;
+  echo $x;
+  echo $x++;
+  echo $x;
+  echo ++$x;
   }
 ?>

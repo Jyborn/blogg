@@ -35,7 +35,7 @@
     $result = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
     $depth = $depth + 1;
-    
+
     foreach ($result as $comment) {
       $blog[] = array(
         $depth,
