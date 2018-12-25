@@ -9,7 +9,7 @@
 
       if ($indentation > 0) {
         echo<<<COMMENT
-          <div class=commentWrap id={$pk}comment style="margin-left:{$indentation}%;">
+           <div class=commentWrap id={$pk}comment style="margin-left:{$indentation}%;">
             <p class="commentText">{$content}</p>
             <a class="replybtn" href="#" name={$pk};{$indentation}>Reply</a>
             </div>
