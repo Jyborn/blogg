@@ -7,6 +7,12 @@ loginButton.addEventListener("click", function() {
   loginContainer.style.visibility = "visible";
 });
 
+function changeVisibilty() {
+  loginContainer.style.visibility = "hidden";
+  loginButton.style.display = "none";
+  newPostButton.style.visibility = "visible";
+}
+
 $("#submitLoginButton").click(function(){
   console.log("klick på submitloginButton");
   $.getJSON("login.php", {username: $("#inputUsername").val(), password: $("#inputPassword").val()},
@@ -14,9 +20,7 @@ $("#submitLoginButton").click(function(){
     console.log(data.login);
     if (data.login == true) {
       console.log("inne");
-      loginContainer.style.visibility = "hidden";
-      loginButton.style.display = "none";
-      newPostButton.style.visibility = "visible";
+      changeVisibilty();
     } else {
       console.log("inte inloggad");
     }

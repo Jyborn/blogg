@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-    <?php menu(); ?>
+    <?php
+      menu(true);
+    ?>
     <form>
       <div class="form-group">
         <label for="inputRubrik">RUBRIK</label>
@@ -20,7 +22,8 @@
         <label for="inputPostContent">Innehållstext</label>
         <input type="text" class="form-control" id="inputPostContent" name="content">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button id="submitButtonPost" type="button" class="btn btn-primary">Submit</button>
     </form>
+    <script src="newPostjs.js"></script>
   </body>
 </html>

@@ -8,10 +8,6 @@
   require 'loginPopUp.php';
   require 'postsCommentsController.php';
   require 'commentPopUp.php';
-
-  if (isset($_SESSION['username'])) {
-    echo "inloggad";
-  }
  ?>
 
 <html lang="sv">
@@ -25,10 +21,16 @@
   <body>
 
     <?php
-    menu();
+    if (isset($_SESSION['username'])) {
+      echo "inloggad";
+      menu(true);
+    } else {
+      menu(false);
+    }
     loginPopUp();
     getblogContent();
     commentPopUp();
+
     ?>
 
     <script src="newCommentJs.js"></script>
